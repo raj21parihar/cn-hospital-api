@@ -1,11 +1,10 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
+const reportController = require('../controllers/report_controller');
 
-// router.get('/:status', (req, res) => {
-//     return res.send({ test: 'msg' });
-// });
+router.post('/:status', reportController.reportByStatus);
 
-// module.exports = router;
+module.exports = router;
 
 // // -	Required Routes
 // // -	/doctors/register → with username and password

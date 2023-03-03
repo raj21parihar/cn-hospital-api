@@ -2,7 +2,7 @@ const { truncate } = require('fs');
 const mongoose = require('mongoose');
 
 const doctorSchema = new mongoose.Schema({
-    email: {
+    username: {
         type: String,
         required: true,
     },

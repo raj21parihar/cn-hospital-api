@@ -1,17 +1,12 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
+const patientController = require('../controllers/patient_controller');
 
-// router.post('/register', (req, res) => {
-//     return res.send({ test: 'msg' });
-// });
-// router.get('/:id/create_report', (req, res) => {
-//     return res.send({ test: 'msg' });
-// });
-// router.get('/:id/all_reports', (req, res) => {
-//     return res.send({ test: 'msg' });
-// });
+router.post('/register', patientController.register);
+router.post('/:id/create_report', patientController.createReport);
+router.post('/:id/all_reports', patientController.reportByPatient);
 
-// module.exports = router;
+module.exports = router;
 
 // // -	Required Routes
 // // -	/doctors/register → with username and password

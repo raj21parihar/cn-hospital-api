@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const friendController = require('../controllers/doctor_controller');
+const doctorController = require('../controllers/doctor_controller');
 
-router.post('/register', friendController.register);
-// route.post('/login', (req, res) => {
-//     return res.send({ test: 'msg' });
-// });
+router.post('/register', doctorController.register);
+router.post('/login', doctorController.login);
+
 module.exports = router;
 // -	Required Routes
 // -	/doctors/register → with username and password

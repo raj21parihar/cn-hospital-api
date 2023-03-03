@@ -2,16 +2,12 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const db = require('./config/mongoose');
-
-// app.get('/test', (req, res) => {
-//     return res.send({ test: 'msg' });
-// });
+app.use(express.json());
 app.use(
     express.urlencoded({
-        extended: false,
+        extended: true,
     })
 );
-
 app.use('/', require('./routes'));
 
 app.listen(process.env.PORT, (err) => {
