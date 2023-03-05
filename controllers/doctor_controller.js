@@ -1,5 +1,5 @@
 const Doctor = require('../models/doctor');
-
+const jwt = require('jsonwebtoken');
 module.exports.register = async function (req, res) {
     try {
         let user = await Doctor.findOne({ username: req.body.username });
@@ -39,20 +39,21 @@ module.exports.login = async function (req, res) {
         if (user) {
             return res.status(200).send({
                 isAuthenticated: true,
-                token: 'TEST',
-                message: 'Loggedin succesfully',
+                token: jwt.sign(user.toJSON(), process.env.JWTKEY, {
+                    expiresIn: '1000000',
+                }),
+                message: 'Sign in successful',
             });
         } else {
-            return res.status(200).send({
+            return res.status(422).send({
                 isAuthenticated: false,
-                token: '',
                 message: 'Invalid credentials',
             });
         }
     } catch (err) {
+        console.log('Error : ', err);
         return res.status(500).send({
             isAuthenticated: false,
-            token: '',
             message: 'Internal Server Error',
         });
     }

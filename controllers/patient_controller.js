@@ -58,6 +58,7 @@ module.exports.reportByPatient = async function (req, res) {
             message: 'Success',
         });
     } catch (err) {
+        console.log(err);
         return res.status(500).send({
             message: 'Internal Server Error',
         });
