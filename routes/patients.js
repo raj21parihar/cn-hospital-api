@@ -13,11 +13,7 @@ router.post(
     passport.authenticate('jwt', { session: false }),
     patientController.createReport
 );
-router.post(
-    '/:id/all_reports',
-    passport.authenticate('jwt', { session: false }),
-    patientController.reportByPatient
-);
+router.post('/:id/all_reports', patientController.reportByPatient);
 
 module.exports = router;
 

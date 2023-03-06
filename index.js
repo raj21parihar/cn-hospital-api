@@ -11,6 +11,8 @@ app.use(
 );
 const passport = require('passport');
 const passportjwt = require('./config/passport-jwt');
+
+app.use(passport.initialize());
 app.use('/', require('./routes'));
 
 app.listen(process.env.PORT, (err) => {
