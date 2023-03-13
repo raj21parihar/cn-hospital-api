@@ -33,12 +33,12 @@ CN Hospital API requires the following dependencies:
 ## API Routes
 
 ### Doctor
-- **POST*  `/doctors/register` - Register a new doctor with a username and password.
+- **POST**  `/doctors/register` - Register a new doctor with a username and password.
 - **POST**  `/doctors/login` - Login with a username and password to receive a JWT.
 >Note: All routes except for `/doctors/register` and `/doctors/login` require a valid JWT to be included in the Authorization header of the request. The JWT should have the format `Bearer <token>`.
 ### Patients
 - **POST**  `/patients/register` - Register a new patient with a phone number. If the patient already exists, the existing patient info is returned.
-- **POST*  `/patients/:id/create_report` - Create a new report for the patient with the given id, which includes the status and the date. The report is created by the doctor who is currently authenticated.
+- **POST**  `/patients/:id/create_report` - Create a new report for the patient with the given id, which includes the status and the date. The report is created by the doctor who is currently authenticated.
 - **GET**  `/patients/:id/all_reports` - List all the reports for the patient with the given id, sorted from oldest to newest.
 ### Reports
 - **GET**  `/reports/:status` - List all the reports for all patients with the given status. The reports are sorted from oldest to newest.
