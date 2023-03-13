@@ -1,5 +1,7 @@
 const Report = require('../models/report');
 
+// Function to list all the reports of all the patients filtered by a specific status
+//Input: status
 module.exports.reportByStatus = async function (req, res) {
     try {
         let report = await Report.find({ status: req.params.status }).exec();

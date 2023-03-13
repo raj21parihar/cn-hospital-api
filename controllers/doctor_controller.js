@@ -1,5 +1,10 @@
+// Doctor controller -  doctor related functionality
 const Doctor = require('../models/doctor');
 const jwt = require('jsonwebtoken');
+
+//Fucntion to register a new doctor, if doctor not exist in system
+//Input:username, name, passowrd
+
 module.exports.register = async function (req, res) {
     try {
         let user = await Doctor.findOne({ username: req.body.username });
@@ -30,6 +35,8 @@ module.exports.register = async function (req, res) {
     }
 };
 
+//Fucntion to login existing doctor doctor, if crdentials provided are correct it return JWT to be used for further use
+//Input:username, passowrd
 module.exports.login = async function (req, res) {
     try {
         let user = await Doctor.findOne({

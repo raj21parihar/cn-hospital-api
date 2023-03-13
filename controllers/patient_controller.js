@@ -1,6 +1,9 @@
+// Parient Conreollers
 const Patient = require('../models/patient');
 const Report = require('../models/report');
 
+//Fucntion to registered a new patient by mobile number, if patient exist return the patients details.
+//Input: phone, name(optional), age(optional), gender(optional)
 module.exports.register = async function (req, res) {
     try {
         let patient = await Patient.findOne({ phone: req.body.phone });
@@ -25,6 +28,8 @@ module.exports.register = async function (req, res) {
     }
 };
 
+//Fucntion to create report pf a patient
+//Input: doctor Id, Patient Id, status, date(default = todays date)
 module.exports.createReport = async function (req, res) {
     try {
         let report = await Report.create({
@@ -48,6 +53,8 @@ module.exports.createReport = async function (req, res) {
     }
 };
 
+//Fucntion to get all the report of a patient
+//Input: Patient Id
 module.exports.reportByPatient = async function (req, res) {
     try {
         let report = await Report.find({ patient: req.params.id })
