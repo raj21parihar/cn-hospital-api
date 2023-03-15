@@ -1,6 +1,7 @@
 // Parient Conreollers
 const Patient = require('../models/patient');
 const Report = require('../models/report');
+var mongoose = require('mongoose');
 
 //Fucntion to registered a new patient by mobile number, if patient exist return the patients details.
 //Input: phone, name(optional), age(optional), gender(optional)

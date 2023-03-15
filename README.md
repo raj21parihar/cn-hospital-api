@@ -14,6 +14,8 @@ To install and run the application, follow the steps below:
     - `PORT=3000`
     - `MONGODB_URI=<your_mongodb_uri>`
     - `JWT_SECRET=<your_jwt_secret>`
+5. Start the server: `npm start`
+6. Open the app in your web browser at `http://localhost:3000`
 
 That's it! You should now have the CN Hospital API app up and running on your local machine.
 
