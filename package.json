@@ -7,6 +7,10 @@
         "type": "git",
         "url": "git+https://github.com/raj21parihar/cn-hospital-api.git"
     },
+    "keywords": [
+        "API",
+        "Hospital API"
+    ],
     "author": "Parmanand Parihar",
     "license": "ISC",
     "bugs": {
